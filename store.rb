@@ -46,8 +46,26 @@ def run_charge(user_card, amount)
   puts "Your card has been charged #{stringify_to_dollars(amount)}."
 end
 
+def get_user_choice(products)
+  puts "AVAILABLE PRODUCTS"
+  products.each_with_index do |product, index|
+    puts "#{index + 1}. #{product[:description]} - #{stringify_to_dollars(product[:price])}"
+  end
+  puts "Enter the number of the product you want to buy:"
+  index = gets.to_i - 1
+  products[index]
+end
+
 # driver code
 
+products = [
+  {description: "dog", price: 2125},
+  {description: "cat", price: 1999},
+  {description: "hamster", price: 500},
+  {description: "tarantula", price: 1275}
+]
+
+choice = get_user_choice(products)
 card = get_card_info
 p stringify_to_dollars(250)
 run_charge(card, 250)
