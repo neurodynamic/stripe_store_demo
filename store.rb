@@ -4,6 +4,7 @@ require_relative 'stripe_config'
 Stripe.api_key = $STRIPE_SECRET_TEST_KEY
 
 # method definitions
+# this is a test change
 
 def get_card_info
   card = {}
