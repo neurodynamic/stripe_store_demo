@@ -18,6 +18,15 @@ def get_card_info
   card
 end
 
+def stringify_to_dollars(cents)
+  # The line below is a little advanced ...
+  # run it individually to find out what it does (new skill!),
+  # then move on with your life.
+  dollars = '%.2f' % (cents / 100.0)
+  "$#{dollars}"
+end
+
 # driver code
 
 card = get_card_info
+p stringify_to_dollars(250)
